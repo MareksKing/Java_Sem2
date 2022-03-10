@@ -27,13 +27,13 @@ public class Professor {
         return degree;
     }
 
+        //3.set funkcijas
     /**
-     * @return String name, return the surname
+     * @param name, the name to set
      */
     public void setName(String name) {
         if(name != null && name.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+\s?([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ])")){
             this.name = name;
-            //name.toLowerCase();
             
         }
         else {
@@ -65,5 +65,20 @@ public class Professor {
             this.degree = ProfDeg.master;
         }
     }
+
+        //4.konstruktori
+    public Professor(){
+        setName("Test");
+        setSurname("Professor");
+        setDegree(ProfDeg.master);
+    }
+
+    public Professor(String name, String surname, ProfDeg degree){
+        setName(name);
+        setSurname(surname);
+        setDegree(degree);
+    }
+
+    
 
 }
