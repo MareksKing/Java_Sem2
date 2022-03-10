@@ -45,7 +45,7 @@ public class Course {
      * @param title the title to set
      */
     public void setTitle(String title) {
-        if(title != null && title.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[\\s\\da-zēūīļķģšāžčņA-ZĒŪĪĀŠĢĶĻŅČŽ]+")){
+        if(title!=null && title.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[\\s\\da-zēūīļķģšāžčņA-ZĒŪĪĀŠĢĶĻŅČŽ]+")){
             this.title = title;
         } else {
             this.title = "unknown";
