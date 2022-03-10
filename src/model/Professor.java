@@ -31,8 +31,10 @@ public class Professor {
      * @return String name, return the surname
      */
     public void setName(String name) {
-        if(name.matches("")){
+        if(name != null && name.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+\s?([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ])")){
             this.name = name;
+            //name.toLowerCase();
+            
         }
         else {
             this.name = "notknown";
@@ -43,14 +45,25 @@ public class Professor {
      * @param surname the surname to set
      */
     public void setSurname(String surname) {
-        this.surname = surname;
+        if(surname != null && surname.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+[-]?([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ])")){
+            this.surname = surname;
+        }
+        else {
+            this.surname = "notknown";
+        }
+        
     }
 
     /**
      * @param degree the degree to set
      */
     public void setDegree(ProfDeg degree) {
-        this.degree = degree;
+        if(degree != null){
+            this.degree = degree;
+        }
+        else {
+            this.degree = ProfDeg.master;
+        }
     }
 
 }
