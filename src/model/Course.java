@@ -99,6 +99,15 @@ public class Course {
         setCreditPoints(creditPoints);
     }
 
+    @Override
+    public String toString() {
+        return "Course [CreditPoints=" + creditPoints + ", ID=" + id + ", Professor=" + professor + ", Title=" + title
+                + "]";
+    }
+
+
+    
+
 
 }
 

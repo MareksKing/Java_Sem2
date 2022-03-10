@@ -1,5 +1,7 @@
 package VeaService;
 import java.util.Random;
+
+import model.Course;
 import model.ProfDeg;
 import model.Professor;
 
@@ -13,5 +15,13 @@ public class VeaService {
         System.out.println(mareks);
         System.out.println(karina);
         System.out.println(vairis);
+
+        Course java = new Course("Programmēšana Tīmeklī JAVA 2022", karina, (byte)2);
+        Course python = new Course("Python programmēšana", vairis, (byte) 2);
+        Course matematika = new Course("Matemātiskā loģika", mareks, (byte) 2);
+        
+        System.out.println(java);
+        System.out.println(python);
+        System.out.println(matematika);
     }
 }
