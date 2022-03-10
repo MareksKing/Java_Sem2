@@ -79,6 +79,13 @@ public class Professor {
         setDegree(degree);
     }
 
+        //5.toString funkcija
+    public String toString(){
+        return name + " " + surname + " " + degree;
+    }
+
+    
+
     
 
 }
