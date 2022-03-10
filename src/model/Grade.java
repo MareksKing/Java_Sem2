@@ -96,6 +96,18 @@ public class Grade {
     }
     public Grade(){
         setId();
-        setCourse(course);
+        setGradeValue(1);
+        setCourse(new Course());
+        setStudent(new Student());
     }
+
+    @Override
+    public String toString() {
+        return "Grade [course=" + course.getTitle() + ", gradeValue=" + gradeValue + ", id=" + id + ", student=" + student.getName() + "]";
+    }
+
+    //5.toString()
+
+    
+
 }
