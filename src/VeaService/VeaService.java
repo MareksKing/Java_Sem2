@@ -10,7 +10,7 @@ import model.Student;
 public class VeaService {
     public static void main(String[] args) throws Exception {
         Random rand = new Random();
-
+        
         Professor mareks = new Professor("Mareks", "Robalds", ProfDeg.bachelor);
         Professor karina = new Professor("Karina", "Šķirmante", ProfDeg.master);
         Professor vairis = new Professor("Vairis", "Caune", ProfDeg.doctor);
