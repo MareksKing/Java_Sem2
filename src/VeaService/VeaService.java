@@ -1,7 +1,7 @@
 package VeaService;
-import java.time.Period;
+
 import java.util.ArrayList;
-import java.util.Random;
+
 
 import model.Course;
 import model.Grade;
@@ -17,7 +17,6 @@ public class VeaService {
     private static ArrayList<Grade> allGrades = new ArrayList<Grade>();
     private static ArrayList<Person> allPersons = new ArrayList<Person>();
     public static void main(String[] args) throws Exception {
-        Random rand = new Random();
         
         Professor prof1 = new Professor("Mareks", "Robalds", ProfDeg.bachelor);
         Professor prof2 = new Professor("Karina", "Šķirmante", ProfDeg.master);
@@ -86,6 +85,18 @@ public class VeaService {
                 Professor prof = (Professor) person;
                 System.out.println(prof.getDegree());
             }
+        }
+    }
+
+    //CRUD  -  Create, Read, Update, Delete
+    //C  -  Create
+    private static boolean addNewCourse(String title, Professor professor, byte creditPoints){
+        Course course = new Course(title, professor, creditPoints);
+        if(allCourses.contains(course)){
+            return false;
+        } else {
+            allCourses.add(course);
+            return true;
         }
     }
 }
