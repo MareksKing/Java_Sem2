@@ -1,9 +1,11 @@
 package VeaService;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Random;
 
 import model.Course;
 import model.Grade;
+import model.Person;
 import model.ProfDeg;
 import model.Professor;
 import model.Student;
@@ -13,18 +15,19 @@ public class VeaService {
     private static ArrayList<Student> allStudents = new ArrayList<Student>();
     private static ArrayList<Course> allCourses = new ArrayList<Course>();
     private static ArrayList<Grade> allGrades = new ArrayList<Grade>();
+    private static ArrayList<Person> allPersons = new ArrayList<Person>();
     public static void main(String[] args) throws Exception {
         Random rand = new Random();
         
         Professor prof1 = new Professor("Mareks", "Robalds", ProfDeg.bachelor);
         Professor prof2 = new Professor("Karina", "Šķirmante", ProfDeg.master);
         Professor prof3 = new Professor("Vairis", "Caune", ProfDeg.doctor);
-        allProfs.add(prof1);
-        allProfs.add(prof2);
-        allProfs.add(prof3);
-        for (Professor prof : allProfs) {
-            System.out.println(prof);
-        }
+        allPersons.add(prof1);
+        allPersons.add(prof2);
+        allPersons.add(prof3);
+        // for (Professor prof : allProfs) {
+        //     System.out.println(prof);
+        // }
 
         Course c1 = new Course("Programmēšana Tīmeklī JAVA 2022", prof2, (byte)2);
         Course c2 = new Course("Python programmēšana", prof3, (byte) 2);
@@ -38,12 +41,12 @@ public class VeaService {
         Student stud1 = new Student("Vilnis", "Lībeks");
         Student stud2 = new Student("Emīls", "Šeflers");
         Student stud3 = new Student("Daniels", "Fišers");
-        allStudents.add(stud1);
-        allStudents.add(stud2);
-        allStudents.add(stud3);
-        for(Student stud : allStudents){
-            System.out.println(stud);
-        }
+        allPersons.add(stud1);
+        allPersons.add(stud2);
+        allPersons.add(stud3);
+        // for(Student stud : allStudents){
+        //     System.out.println(stud);
+        // }
         Grade gr1 = new Grade(4, stud1, c1);
         Grade gr2 = new Grade(7, stud1, c2);
         Grade gr3 = new Grade(9, stud1, c3);
@@ -68,6 +71,21 @@ public class VeaService {
         allGrades.add(gr9);
         for(Grade gr : allGrades){
             System.out.println(gr);
+        }
+
+        Person p = new Person("Kalvis", "Kalns");
+        allPersons.add(p);
+        Student stud4 = new Student("Pēteris", "Lielais");
+        allPersons.add(stud4);
+        for (Person person : allPersons) {
+            System.out.println(person);
+        }
+
+        for (Person person : allPersons) {
+            if(person instanceof Professor){
+                Professor prof = (Professor) person;
+                System.out.println(prof.getDegree());
+            }
         }
     }
 }

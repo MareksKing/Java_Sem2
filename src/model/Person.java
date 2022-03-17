@@ -55,6 +55,6 @@ public class Person {
 
     //5.toString()
     public String toString(){
-        return "name= "+ name + " surname=" + surname; 
+        return name + " " + surname; 
     }
 }
